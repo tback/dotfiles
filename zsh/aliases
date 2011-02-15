@@ -20,3 +20,5 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 
 # commands starting with % for pasting from web
 alias %=' '
+
+alias less='less -i'
