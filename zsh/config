@@ -1,12 +1,15 @@
+PROMPT='%3~$(git_info_for_prompt)%# '
 if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_info_for_prompt)%# '
+    PROMPT="%n@%m:$PROMPT"
 else
-  export PS1='%3~$(git_info_for_prompt)%# '
+    PROMPT="%n:$PROMPT"
 fi
 
+export PS1=$PROMPT
+
 export EDITOR='mate_wait'
-export PATH="$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export PATH="$HOME/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 fpath=(~/.zsh/functions $fpath)
 
