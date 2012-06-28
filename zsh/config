@@ -7,7 +7,11 @@ fi
 
 export PS1=$PROMPT
 
-export EDITOR='mate_wait'
+if command -v mate > /dev/null 2>&1 ; then
+    export EDITOR='mate -w'
+else
+    export EDITOR='vim'
+fi
 export PATH="$HOME/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
